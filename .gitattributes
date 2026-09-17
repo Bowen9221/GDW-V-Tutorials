@@ -1,2 +1,94 @@
-# Auto detect text files and perform LF normalization
+# ====================================================================
+# Git Attributes configuration for Unreal Engine
+# Handles Git LFS tracking, file locking, and line ending normalization.
+# ====================================================================
+
+# --------------------------------------------------------------------
+# Global settings & macro attributes for clean configurations
+# --------------------------------------------------------------------
 * text=auto
+
+# Define an LFS macro attribute that tracks binaries, bypasses diffs, 
+# prevents line ending alteration, and allows file locking.
+[attr]binarylfs filter=lfs diff=lfs merge=lfs -text lockable
+
+# --------------------------------------------------------------------
+# Unreal Engine Core Binary Asset Types (Must use Git LFS)
+# --------------------------------------------------------------------
+*.uasset binarylfs
+*.umap binarylfs
+
+# --------------------------------------------------------------------
+# Common 3D Art & Animation Source Files
+# --------------------------------------------------------------------
+*.fbx binarylfs
+*.obj binarylfs
+*.max binarylfs
+*.maya binarylfs
+*.blend binarylfs
+*.abc binarylfs
+*.gltf binarylfs
+*.glb binarylfs
+*.dae binarylfs
+*.3ds binarylfs
+
+# --------------------------------------------------------------------
+# Common Textures, Images, & User Interface Files
+# --------------------------------------------------------------------
+*.png binarylfs
+*.jpg binarylfs
+*.jpeg binarylfs
+*.tga binarylfs
+*.psd binarylfs
+*.exr binarylfs
+*.hdr binarylfs
+*.tif binarylfs
+*.tiff binarylfs
+*.bmp binarylfs
+*.ico binarylfs
+*.svg binarylfs
+
+# --------------------------------------------------------------------
+# Audio Files
+# --------------------------------------------------------------------
+*.wav binarylfs
+*.mp3 binarylfs
+*.ogg binarylfs
+*.flac binarylfs
+
+# --------------------------------------------------------------------
+# Video & Media Assets
+# --------------------------------------------------------------------
+*.mp4 binarylfs
+*.mkv binarylfs
+*.mov binarylfs
+*.avi binarylfs
+*.wmv binarylfs
+
+# --------------------------------------------------------------------
+# Compiled Binaries, Libraries & Packed Packages
+# --------------------------------------------------------------------
+*.dll binarylfs
+*.exe binarylfs
+*.pdb binarylfs
+*.lib binarylfs
+*.dylib binarylfs
+*.so binarylfs
+*.a binarylfs
+*.pak binarylfs
+
+# --------------------------------------------------------------------
+# Text Formatting & Line Endings Normalization
+# --------------------------------------------------------------------
+# Source Code
+*.cpp text diff=cpp
+*.h text diff=cpp
+*.cs text diff=csharp
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Config & Build files
+*.ini text
+*.target text
+*.build text
+*.uproject text
