@@ -2,22 +2,18 @@
 # Git Attributes configuration for Unreal Engine
 # Handles Git LFS tracking, file locking, and line ending normalization.
 # ====================================================================
-
 # --------------------------------------------------------------------
 # Global settings & macro attributes for clean configurations
 # --------------------------------------------------------------------
 * text=auto
-
 # Define an LFS macro attribute that tracks binaries, bypasses diffs, 
 # prevents line ending alteration, and allows file locking.
 [attr]binarylfs filter=lfs diff=lfs merge=lfs -text lockable
-
 # --------------------------------------------------------------------
 # Unreal Engine Core Binary Asset Types (Must use Git LFS)
 # --------------------------------------------------------------------
 *.uasset binarylfs
 *.umap binarylfs
-
 # --------------------------------------------------------------------
 # Common 3D Art & Animation Source Files
 # --------------------------------------------------------------------
@@ -31,7 +27,6 @@
 *.glb binarylfs
 *.dae binarylfs
 *.3ds binarylfs
-
 # --------------------------------------------------------------------
 # Common Textures, Images, & User Interface Files
 # --------------------------------------------------------------------
@@ -47,7 +42,6 @@
 *.bmp binarylfs
 *.ico binarylfs
 *.svg binarylfs
-
 # --------------------------------------------------------------------
 # Audio Files
 # --------------------------------------------------------------------
@@ -55,7 +49,6 @@
 *.mp3 binarylfs
 *.ogg binarylfs
 *.flac binarylfs
-
 # --------------------------------------------------------------------
 # Video & Media Assets
 # --------------------------------------------------------------------
@@ -64,7 +57,6 @@
 *.mov binarylfs
 *.avi binarylfs
 *.wmv binarylfs
-
 # --------------------------------------------------------------------
 # Compiled Binaries, Libraries & Packed Packages
 # --------------------------------------------------------------------
@@ -76,7 +68,6 @@
 *.so binarylfs
 *.a binarylfs
 *.pak binarylfs
-
 # --------------------------------------------------------------------
 # Text Formatting & Line Endings Normalization
 # --------------------------------------------------------------------
@@ -86,9 +77,9 @@
 *.cs text diff=csharp
 *.sh text eol=lf
 *.bat text eol=crlf
-
 # Config & Build files
 *.ini text
 *.target text
 *.build text
 *.uproject text
+.png filter=lfs diff=lfs merge=lfs -text
